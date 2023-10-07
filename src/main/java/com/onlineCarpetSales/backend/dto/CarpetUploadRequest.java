@@ -14,4 +14,5 @@ public class CarpetUploadRequest implements Serializable {
     private String carpetName;
     private int squaremetrePrice;
     private MultipartFile imageFile;
+    private int collection_id;
 }

@@ -3,6 +3,9 @@ package com.onlineCarpetSales.backend.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @Entity
@@ -14,9 +17,9 @@ public class Size {
     private int id;
     @Column(name="width")
     private int width;
-    @Column(name="size")
-    private int size;
-    @Column(name="is_available")
-    private boolean isAvailable;
-
+    @Column(name="length")
+    private int length;
+    @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            mappedBy = "size")
+    private List<CarpetSizes> carpetSizes;
 }

@@ -1,14 +1,11 @@
 package com.onlineCarpetSales.backend.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -30,11 +27,25 @@ public class Carpet {
     @Column(name="date_added")
     private LocalDateTime dateAdded;
 
-//    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
-//            CascadeType.PERSIST, CascadeType.REFRESH})
-//    @JoinColumn(name = "collection_id")
-//    private CarpetCollections carpetCollections;
-//
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "collection_id")
+    private CarpetCollections carpetCollections;
+
+    @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            mappedBy = "carpet")
+    private List<CarpetSizes> carpetsizes;
+
+
+
+
+
+
+
+
+
+
+
 //    @ManyToMany(fetch = FetchType.EAGER)
 //    @JoinTable(name = "carpet_size", schema ="onlinecarpetsales",
 //            joinColumns = {@JoinColumn(name="carpet_id")},
