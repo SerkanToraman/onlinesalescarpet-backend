@@ -21,17 +21,14 @@ public class Carpet {
     private String carpetName;
     @Column(name="squaremetre_price")
     private int squaremetrePrice;
-
-    @Column(name="image_file", columnDefinition = "bytea")
-    private byte[] imageFile;
+    @Column(name="image_path")
+    private String imagePath;
     @Column(name="date_added")
     private LocalDateTime dateAdded;
-
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
             CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "collection_id")
     private CarpetCollections carpetCollections;
-
     @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "carpet")
     private List<CarpetSizes> carpetsizes;

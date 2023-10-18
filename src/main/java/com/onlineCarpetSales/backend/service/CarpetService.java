@@ -3,10 +3,18 @@ package com.onlineCarpetSales.backend.service;
 import com.onlineCarpetSales.backend.entity.Carpet;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public interface CarpetService{
-    void saveCarpetWithImage(Carpet carpet, MultipartFile imageFile);
+    void saveCarpet(Carpet carpet);
 
     Optional<Carpet> getCarpetById(int id);
+
+
+     void uploadImage(MultipartFile file, String imageName) throws IOException;
+
+    public byte[] downloadImage(int id) throws IOException;
+
+
 }
