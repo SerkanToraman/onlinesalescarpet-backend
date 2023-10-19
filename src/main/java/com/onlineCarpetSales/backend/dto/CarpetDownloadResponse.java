@@ -1,4 +1,9 @@
 package com.onlineCarpetSales.backend.dto;
 
-public record CarpetDownloadResponse (String carpetName, String imageBase64) {
+import com.onlineCarpetSales.backend.entity.CarpetSizes;
+
+import java.util.List;
+import java.util.Set;
+
+public record CarpetDownloadResponse (String carpetName, List<CarpetSizeDownloadResponse> CarpetSizesList) {
 }

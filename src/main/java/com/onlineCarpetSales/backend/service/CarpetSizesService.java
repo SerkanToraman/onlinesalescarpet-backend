@@ -9,4 +9,8 @@ public interface CarpetSizesService {
 
     List<CarpetSizes> findAll();
     CarpetSizes save(CarpetSizes carpetSizes);
+
+    List<CarpetSizes> findAllByCarpetId(int id);
+
+
 }

@@ -1,11 +1,15 @@
 package com.onlineCarpetSales.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -29,28 +33,9 @@ public class Carpet {
             CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "collection_id")
     private CarpetCollections carpetCollections;
-    @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "carpet")
-    private List<CarpetSizes> carpetsizes;
-
-
-
-
-
-
-
-
-
-
-
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(name = "carpet_size", schema ="onlinecarpetsales",
-//            joinColumns = {@JoinColumn(name="carpet_id")},
-//            inverseJoinColumns = {@JoinColumn(name = "size_id")})
-//    private Set<Size> sizes =new HashSet<>();
-//    I dont add ManytoMany relation on sizes since i dont need the list of carpets one each size.
-//    But above i will see the size available under each carpet
-
-
+    @JsonIgnore
+    private Set<CarpetSizes> carpetSizesList = new HashSet<>();
 
 }

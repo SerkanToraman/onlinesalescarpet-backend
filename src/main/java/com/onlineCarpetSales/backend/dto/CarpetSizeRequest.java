@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CarpetSizeRequest {
     private int sizeId;
-    private boolean isAvailable;
+    private boolean available;
 }

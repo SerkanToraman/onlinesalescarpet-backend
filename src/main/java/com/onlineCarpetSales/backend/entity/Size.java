@@ -1,5 +1,6 @@
 package com.onlineCarpetSales.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class Size {
     private int length;
     @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "size")
+    @JsonIgnore
     private List<CarpetSizes> carpetSizes;
 }

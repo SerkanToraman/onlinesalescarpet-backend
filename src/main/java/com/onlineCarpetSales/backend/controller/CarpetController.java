@@ -3,6 +3,7 @@ package com.onlineCarpetSales.backend.controller;
 import aj.org.objectweb.asm.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onlineCarpetSales.backend.dto.CarpetDownloadResponse;
+import com.onlineCarpetSales.backend.dto.CarpetSizeDownloadResponse;
 import com.onlineCarpetSales.backend.dto.CarpetUploadRequest;
 import com.onlineCarpetSales.backend.dto.CarpetSizeRequest;
 import com.onlineCarpetSales.backend.entity.Carpet;
@@ -14,6 +15,7 @@ import com.onlineCarpetSales.backend.service.CarpetService;
 import com.onlineCarpetSales.backend.service.CarpetSizesService;
 import com.onlineCarpetSales.backend.service.SizeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,9 +24,7 @@ import org.springframework.http.MediaType;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Base64;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/carpets")
@@ -45,8 +45,6 @@ public class CarpetController {
     }
 
 
-
-
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/upload")
     public void uploadCarpetWithImage(@RequestPart("imageFile") MultipartFile imageFile, @RequestPart("carpetUploadRequest") CarpetUploadRequest carpetUploadRequest) throws IOException {
@@ -55,15 +53,14 @@ public class CarpetController {
         carpet.setCarpetName(carpetUploadRequest.getCarpetName());
         carpet.setSquaremetrePrice(carpetUploadRequest.getSquaremetrePrice());
         carpet.setDateAdded(LocalDateTime.now());
-        carpet.setImagePath(carpetUploadRequest.getCarpetName()+".png");
+        carpet.setImagePath(carpetUploadRequest.getCarpetName() + ".png");
         CarpetCollections selectedCollection = carpetCollectionsService.findById(carpetUploadRequest.getCollection_id());
         carpet.setCarpetCollections(selectedCollection);
         carpetService.saveCarpet(carpet);
-        List<CarpetSizeRequest> carpetSizes = carpetUploadRequest.getCarpetSizes();
-        for (int i = 1; i <= carpetSizes.size(); i++) {
-            CarpetSizeRequest sizeRequest = carpetSizes.get(i - 1);
+        for (CarpetSizeRequest sizeRequest : carpetUploadRequest.getCarpetSizes()) {
             CarpetSizes carpetSize = new CarpetSizes();
             carpetSize.setAvailable(sizeRequest.isAvailable());
+            carpetSize.setCarpet(carpet);
             Size size = sizeService.getById(sizeRequest.getSizeId());
             carpetSize.setSize(size);
             carpetSize.setCarpet(carpet);
@@ -72,7 +69,7 @@ public class CarpetController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/download/{id}")
+    @GetMapping("/downloadImage/{id}")
     public ResponseEntity<byte[]> getCarpetImage(@PathVariable int id) {
         try {
             byte[] imageData = carpetService.downloadImage(id);
@@ -87,8 +84,26 @@ public class CarpetController {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/download/{id}")
+    public CarpetDownloadResponse getCarpetData(@PathVariable int id) {
+       Carpet carpet= carpetService.getCarpetById(id);
+       List<CarpetSizes> carpetSizesList=carpetSizesService.findAllByCarpetId(id);
+       List<CarpetSizeDownloadResponse> carpetSizeDownloadResponseList = new ArrayList<>();
+        for (CarpetSizes carpetSize : carpetSizesList) {
+            int width = carpetSize.getSize().getWidth(); // Assuming the Size object has a getWidth() method
+            int length = carpetSize.getSize().getLength(); // Assuming the Size object has a getLength() method
+            boolean available = carpetSize.isAvailable();
+            CarpetSizeDownloadResponse carpetSizeDownloadResponse = new CarpetSizeDownloadResponse(width, length, available);
+            carpetSizeDownloadResponseList.add(carpetSizeDownloadResponse);
+        }
 
+        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getCarpetName(),carpetSizeDownloadResponseList);
+        return carpetDownloadResponse;
+    }
 }
+
+
 
 
 

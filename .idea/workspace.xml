@@ -4,32 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="image download and upload controller done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/SizeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Change img download from db to folder and improve upload">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeDownloadResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Carpet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Carpet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/CarpetSizes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/CarpetSizes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Size.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/SizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/SizeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/SizeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/SizeServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetSizesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Carpet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Carpet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/CarpetSizes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/CarpetSizes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Size.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Size.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/CarpetRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/CarpetRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/SizeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/SizeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/SizeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/SizeServiceImp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -65,14 +62,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/serkantoraman/Desktop/Programming/Projeler/Carpet/onlinesalescarpet-backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/serkantoraman/Desktop/Programming/Projeler/Carpet/onlinesalescarpet-backend&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.onlineCarpetSales.backend.controller" />
@@ -160,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696687602037</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change img download from db to folder and improve upload">
+      <option name="closed" value="true" />
+      <created>1697654606239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697654606239</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,41 +183,114 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="image download and upload controller done" />
     <MESSAGE value="Link to CarpetCollections table and its controller,service done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Link to CarpetCollections table and its controller,service done" />
+    <MESSAGE value="Change img download from db to folder and improve upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change img download from db to folder and improve upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>53</line>
+          <line>51</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>54</line>
+          <line>52</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java</url>
-          <line>49</line>
+          <line>50</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>77</line>
+          <line>90</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>79</line>
+          <line>100</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.java</url>
           <line>23</line>
           <properties field="carpetSizes" class="com.onlineCarpetSales.backend.dto.CarpetUploadRequest" />
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.java</url>
+          <line>11</line>
+          <properties field="isAvailable" class="com.onlineCarpetSales.backend.dto.CarpetSizeRequest" />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.java</url>
+          <line>10</line>
+          <properties field="sizeId" class="com.onlineCarpetSales.backend.dto.CarpetSizeRequest" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

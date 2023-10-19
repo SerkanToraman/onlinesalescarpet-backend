@@ -1,5 +1,6 @@
 package com.onlineCarpetSales.backend.service;
 
+import com.onlineCarpetSales.backend.dto.CarpetDownloadResponse;
 import com.onlineCarpetSales.backend.entity.Carpet;
 import com.onlineCarpetSales.backend.repository.CarpetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,9 @@ public class CarpetServiceImp implements  CarpetService{
         carpetRepository.save(carpet);
     }
 
-    public Optional<Carpet> getCarpetById(int id) {
-        return carpetRepository.findById(id);
+    public Carpet getCarpetById(int id) {
+        Optional<Carpet> optionalCarpet = carpetRepository.findById(id);
+        return optionalCarpet.orElse(null);
     }
 
     public void uploadImage(MultipartFile file, String imageName) throws IOException {
@@ -46,8 +48,11 @@ public class CarpetServiceImp implements  CarpetService{
             //todo exception
         }
         String imagePath=uploadPath+carpetData.get().getImagePath();
-        System.out.println(imagePath);
         byte[] images = Files.readAllBytes(new File(imagePath).toPath());
         return images;
     }
+
+
+
+
 }
