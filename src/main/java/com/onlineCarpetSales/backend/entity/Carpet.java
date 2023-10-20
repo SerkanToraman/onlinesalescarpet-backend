@@ -31,7 +31,7 @@ public class Carpet {
     private LocalDateTime dateAdded;
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
             CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "collection_id")
+    @JoinColumn(name = "collection_id",referencedColumnName = "id")
     private CarpetCollections carpetCollections;
     @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "carpet")

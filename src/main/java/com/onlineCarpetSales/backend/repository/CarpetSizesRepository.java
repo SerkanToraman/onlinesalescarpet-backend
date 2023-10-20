@@ -1,5 +1,6 @@
 package com.onlineCarpetSales.backend.repository;
 
+import com.onlineCarpetSales.backend.entity.Carpet;
 import com.onlineCarpetSales.backend.entity.CarpetSizes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,4 +13,5 @@ public interface CarpetSizesRepository extends JpaRepository<CarpetSizes, Intege
 
     @Query("SELECT c FROM CarpetSizes c WHERE carpet.id = :id")
     Optional<List<CarpetSizes>> findAllByCarpetId(@Param("id") int id);
+
 }

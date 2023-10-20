@@ -50,7 +50,7 @@ public class CarpetController {
     public void uploadCarpetWithImage(@RequestPart("imageFile") MultipartFile imageFile, @RequestPart("carpetUploadRequest") CarpetUploadRequest carpetUploadRequest) throws IOException {
         carpetService.uploadImage(imageFile, carpetUploadRequest.getCarpetName());
         Carpet carpet = new Carpet();
-        carpet.setCarpetName(carpetUploadRequest.getCarpetName());
+        carpet.setCarpetName(carpetUploadRequest.getCarpetName().toUpperCase());
         carpet.setSquaremetrePrice(carpetUploadRequest.getSquaremetrePrice());
         carpet.setDateAdded(LocalDateTime.now());
         carpet.setImagePath(carpetUploadRequest.getCarpetName() + ".png");
@@ -85,21 +85,26 @@ public class CarpetController {
 
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/download/{id}")
-    public CarpetDownloadResponse getCarpetData(@PathVariable int id) {
-       Carpet carpet= carpetService.getCarpetById(id);
-       List<CarpetSizes> carpetSizesList=carpetSizesService.findAllByCarpetId(id);
+    @GetMapping("/download/{name}")
+    public CarpetDownloadResponse getCarpetData(@PathVariable String name) {
+       Carpet carpet= carpetService.findByName(name.toUpperCase());
+       List<CarpetSizes> carpetSizesList=carpetSizesService.findAllByCarpetId(carpet.getId());
        List<CarpetSizeDownloadResponse> carpetSizeDownloadResponseList = new ArrayList<>();
         for (CarpetSizes carpetSize : carpetSizesList) {
-            int width = carpetSize.getSize().getWidth(); // Assuming the Size object has a getWidth() method
-            int length = carpetSize.getSize().getLength(); // Assuming the Size object has a getLength() method
+            int width = carpetSize.getSize().getWidth();
+            int length = carpetSize.getSize().getLength();
             boolean available = carpetSize.isAvailable();
             CarpetSizeDownloadResponse carpetSizeDownloadResponse = new CarpetSizeDownloadResponse(width, length, available);
             carpetSizeDownloadResponseList.add(carpetSizeDownloadResponse);
         }
-
-        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getCarpetName(),carpetSizeDownloadResponseList);
+        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpetSizeDownloadResponseList);
         return carpetDownloadResponse;
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/collectionscarpet/{id}")
+    public List<Carpet> getCarpetDataByCollection(@PathVariable int id) {
+        return carpetService.findAllByCollectionId(id);
     }
 }
 

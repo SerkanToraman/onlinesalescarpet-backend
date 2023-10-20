@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 import java.nio.file.Files;
 
@@ -52,7 +53,15 @@ public class CarpetServiceImp implements  CarpetService{
         return images;
     }
 
+    @Override
+    public List<Carpet> findAllByCollectionId(int id) {
+        Optional<List<Carpet>> carpetList = carpetRepository.findAllByCollectionId(id);
+        return carpetList.orElse(null);
+    }
 
-
-
+    @Override
+    public Carpet findByName(String name) {
+        Optional<Carpet> carpet = carpetRepository.findByName(name);
+        return carpet.orElse(null);
+    }
 }
