@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Complete  Carpetresponse CarpetName and carpet size list">
+    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Complete SingeCarpet data to frontend&#10;Add Fringe Classes&#10;next step add relations, service, controller etc.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/FringeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/FringeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/FringeServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Carpet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Carpet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/CarpetFringe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Fringe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/entity/Fringe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Carpet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Carpet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/CarpetRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/CarpetRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetServiceImp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Record" />
       </list>
     </option>
   </component>
@@ -167,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697721553775</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Complete SingeCarpet data to frontend&#10;Add Fringe Classes&#10;next step add relations, service, controller etc.">
+      <option name="closed" value="true" />
+      <created>1697808557773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697808557773</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,21 +190,12 @@
     <MESSAGE value="Link to CarpetCollections table and its controller,service done" />
     <MESSAGE value="Change img download from db to folder and improve upload" />
     <MESSAGE value="Complete  Carpetresponse CarpetName and carpet size list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete  Carpetresponse CarpetName and carpet size list" />
+    <MESSAGE value="Complete SingeCarpet data to frontend&#10;Add Fringe Classes&#10;next step add relations, service, controller etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete SingeCarpet data to frontend&#10;Add Fringe Classes&#10;next step add relations, service, controller etc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/service/CarpetServiceImp.java</url>
           <line>51</line>
@@ -209,67 +203,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java</url>
-          <line>89</line>
+          <line>94</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">

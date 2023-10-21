@@ -6,14 +6,8 @@ import com.onlineCarpetSales.backend.dto.CarpetDownloadResponse;
 import com.onlineCarpetSales.backend.dto.CarpetSizeDownloadResponse;
 import com.onlineCarpetSales.backend.dto.CarpetUploadRequest;
 import com.onlineCarpetSales.backend.dto.CarpetSizeRequest;
-import com.onlineCarpetSales.backend.entity.Carpet;
-import com.onlineCarpetSales.backend.entity.CarpetCollections;
-import com.onlineCarpetSales.backend.entity.CarpetSizes;
-import com.onlineCarpetSales.backend.entity.Size;
-import com.onlineCarpetSales.backend.service.CarpetCollectionsService;
-import com.onlineCarpetSales.backend.service.CarpetService;
-import com.onlineCarpetSales.backend.service.CarpetSizesService;
-import com.onlineCarpetSales.backend.service.SizeService;
+import com.onlineCarpetSales.backend.entity.*;
+import com.onlineCarpetSales.backend.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -35,14 +29,18 @@ public class CarpetController {
     private CarpetSizesService carpetSizesService;
     private SizeService sizeService;
 
+    private FringeService fringeService;
 
     @Autowired
-    public CarpetController(CarpetService carpetService, CarpetCollectionsService carpetCollectionsService, CarpetSizesService carpetSizesService, SizeService sizeService) {
+    public CarpetController(CarpetService carpetService, CarpetCollectionsService carpetCollectionsService, CarpetSizesService carpetSizesService, SizeService sizeService, FringeService fringeService) {
         this.carpetService = carpetService;
         this.carpetCollectionsService = carpetCollectionsService;
         this.carpetSizesService = carpetSizesService;
         this.sizeService = sizeService;
+        this.fringeService = fringeService;
     }
+
+
 
 
     @CrossOrigin(origins = "http://localhost:3000")
@@ -56,6 +54,13 @@ public class CarpetController {
         carpet.setImagePath(carpetUploadRequest.getCarpetName() + ".png");
         CarpetCollections selectedCollection = carpetCollectionsService.findById(carpetUploadRequest.getCollection_id());
         carpet.setCarpetCollections(selectedCollection);
+        List<Integer> carpetFringeIds = carpetUploadRequest.getCarpetFringeList();
+        Set<Fringe> carpetFringes = new HashSet<>();
+        for (Integer fringeId : carpetFringeIds) {
+            Fringe fringe = fringeService.getById(fringeId);
+            carpetFringes.add(fringe);
+        }
+        carpet.setCarpetFringeList(carpetFringes);
         carpetService.saveCarpet(carpet);
         for (CarpetSizeRequest sizeRequest : carpetUploadRequest.getCarpetSizes()) {
             CarpetSizes carpetSize = new CarpetSizes();
@@ -97,7 +102,8 @@ public class CarpetController {
             CarpetSizeDownloadResponse carpetSizeDownloadResponse = new CarpetSizeDownloadResponse(width, length, available);
             carpetSizeDownloadResponseList.add(carpetSizeDownloadResponse);
         }
-        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpetSizeDownloadResponseList);
+        Set<Fringe> carpetFringeList = carpet.getCarpetFringeList();
+        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpetSizeDownloadResponseList,carpetFringeList);
         return carpetDownloadResponse;
     }
 
@@ -105,6 +111,12 @@ public class CarpetController {
     @GetMapping("/collectionscarpet/{id}")
     public List<Carpet> getCarpetDataByCollection(@PathVariable int id) {
         return carpetService.findAllByCollectionId(id);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/{id}")
+    public Carpet getCarpet(@PathVariable int id) {
+        return carpetService.getCarpetById(id);
     }
 }
 

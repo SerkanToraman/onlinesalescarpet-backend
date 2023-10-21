@@ -38,4 +38,24 @@ public class Carpet {
     @JsonIgnore
     private Set<CarpetSizes> carpetSizesList = new HashSet<>();
 
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name ="carpetfringe",schema="onlinecarpetsales",
+            joinColumns = @JoinColumn(name="carpet_id"),
+            inverseJoinColumns = @JoinColumn(name="fringe_id"))
+    private Set<Fringe> carpetFringeList = new HashSet<>();
+
+    public void addFringe (Fringe fringe){
+        if(carpetFringeList==null){
+            carpetFringeList = new HashSet<>();
+        }
+        carpetFringeList.add(fringe);
+    }
+    public void removeFringe (Fringe fringe){
+        if(carpetFringeList==null){
+            carpetFringeList = new HashSet<>();
+        }
+        carpetFringeList.remove(fringe);
+    }
+
 }

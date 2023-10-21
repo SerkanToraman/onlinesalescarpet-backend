@@ -23,7 +23,7 @@ public class CarpetUploadRequest implements Serializable {
 
     private List<CarpetSizeRequest> carpetSizes;
 
-
+    private  List<Integer> carpetFringeList;
 
 }
 

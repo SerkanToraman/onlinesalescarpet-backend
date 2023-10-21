@@ -1,9 +1,12 @@
 package com.onlineCarpetSales.backend.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,5 +21,4 @@ public class Fringe {
     private String fringeType;
     @Column(name="fringe_price")
     private String fringePrice;
-
 }
