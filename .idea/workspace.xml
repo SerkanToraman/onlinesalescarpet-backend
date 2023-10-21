@@ -4,7 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Add fringe entity, Repo, Service and controller" />
+    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Add fringe entity, Repo, Service and controller">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/repository/FringeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/12312.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/228ANT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/228KH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/228LL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/602KH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/602LL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/602SY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/asd12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/asd12342.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/asdas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pics/sd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/FringeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/SizeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetSizeDownloadResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetSizeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/entity/Fringe.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/CarpetSizesRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/repository/FringeRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetSizesImp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/CarpetSizesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/FringeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/service/FringeServiceImp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/12312.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/228ANT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/228KH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/228LL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/602KH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/602LL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/602SY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/asd12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/asd12342.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/asdas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pics/sd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/dto/CarpetUploadRequest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697889115546</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add fringe entity, Repo, Service and controller">
+      <option name="closed" value="true" />
+      <created>1697889418510</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697889418510</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
