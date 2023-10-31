@@ -19,6 +19,7 @@ import org.springframework.http.MediaType;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/carpets")
@@ -94,14 +95,21 @@ public class CarpetController {
     public CarpetDownloadResponse getCarpetData(@PathVariable String name) {
        Carpet carpet= carpetService.findByName(name.toUpperCase());
        List<CarpetSizes> carpetSizesList=carpetSizesService.findAllByCarpetId(carpet.getId());
-       List<CarpetSizeDownloadResponse> carpetSizeDownloadResponseList = new ArrayList<>();
-        for (CarpetSizes carpetSize : carpetSizesList) {
-            int width = carpetSize.getSize().getWidth();
-            int length = carpetSize.getSize().getLength();
-            boolean available = carpetSize.isAvailable();
-            CarpetSizeDownloadResponse carpetSizeDownloadResponse = new CarpetSizeDownloadResponse(width, length, available);
-            carpetSizeDownloadResponseList.add(carpetSizeDownloadResponse);
-        }
+//       List<CarpetSizeDownloadResponse> carpetSizeDownloadResponseList = new ArrayList<>();
+//        for (CarpetSizes carpetSize : carpetSizesList) {
+//            int width = carpetSize.getSize().getWidth();
+//            int length = carpetSize.getSize().getLength();
+//            boolean available = carpetSize.isAvailable();
+//            CarpetSizeDownloadResponse carpetSizeDownloadResponse = new CarpetSizeDownloadResponse(width, length, available);
+//            carpetSizeDownloadResponseList.add(carpetSizeDownloadResponse);
+//        }
+
+        List<CarpetSizeDownloadResponse> carpetSizeDownloadResponseList = carpetSizesList.stream()
+                .map(carpetSize -> new CarpetSizeDownloadResponse(carpetSize.getSize().getWidth(), carpetSize.getSize().getLength(), carpetSize.isAvailable()))
+                .sorted(Comparator.comparingInt(CarpetSizeDownloadResponse::width))
+                .collect(Collectors.toList());
+
+
         Set<Fringe> carpetFringeList = carpet.getCarpetFringeList();
         CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpetSizeDownloadResponseList,carpetFringeList);
         return carpetDownloadResponse;
