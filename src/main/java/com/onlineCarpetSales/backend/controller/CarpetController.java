@@ -108,10 +108,8 @@ public class CarpetController {
                 .map(carpetSize -> new CarpetSizeDownloadResponse(carpetSize.getSize().getWidth(), carpetSize.getSize().getLength(), carpetSize.isAvailable()))
                 .sorted(Comparator.comparingInt(CarpetSizeDownloadResponse::width))
                 .collect(Collectors.toList());
-
-
         Set<Fringe> carpetFringeList = carpet.getCarpetFringeList();
-        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpetSizeDownloadResponseList,carpetFringeList);
+        CarpetDownloadResponse carpetDownloadResponse = new CarpetDownloadResponse(carpet.getId(),carpet.getCarpetName(),carpet.getSquaremetrePrice(),carpetSizeDownloadResponseList,carpetFringeList);
         return carpetDownloadResponse;
     }
 

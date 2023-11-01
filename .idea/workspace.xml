@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Add fringe entity, Repo, Service and controller">
+    <list default="true" id="60d4b053-aca7-497e-a1fd-ac81fdc4f7a1" name="Changes" comment="Add price into downloadResponse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/controller/CarpetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onlineCarpetSales/backend/dto/CarpetDownloadResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/onlineCarpetSales/backend/controller/CarpetController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697889434978</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add sorting the sizes">
+      <option name="closed" value="true" />
+      <created>1698752296190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698752296190</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +217,9 @@
     <MESSAGE value="Complete  Carpetresponse CarpetName and carpet size list" />
     <MESSAGE value="Complete SingeCarpet data to frontend&#10;Add Fringe Classes&#10;next step add relations, service, controller etc." />
     <MESSAGE value="Add fringe entity, Repo, Service and controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fringe entity, Repo, Service and controller" />
+    <MESSAGE value="Add sorting the sizes" />
+    <MESSAGE value="Add price into downloadResponse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add price into downloadResponse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

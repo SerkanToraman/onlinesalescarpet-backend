@@ -6,5 +6,5 @@ import com.onlineCarpetSales.backend.entity.Fringe;
 import java.util.List;
 import java.util.Set;
 
-public record CarpetDownloadResponse (int id, String carpetName, List<CarpetSizeDownloadResponse> carpetSizesList, Set<Fringe> carpetFringeList) {
+public record CarpetDownloadResponse (int id, String carpetName,int squareMetrePrice, List<CarpetSizeDownloadResponse> carpetSizesList, Set<Fringe> carpetFringeList) {
 }
